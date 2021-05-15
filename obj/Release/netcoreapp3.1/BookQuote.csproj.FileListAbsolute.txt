@@ -1,0 +1,14 @@
+F:\TD\BookQuote\bin\Release\netcoreapp3.1\BookQuote.exe
+F:\TD\BookQuote\bin\Release\netcoreapp3.1\BookQuote.deps.json
+F:\TD\BookQuote\bin\Release\netcoreapp3.1\BookQuote.runtimeconfig.json
+F:\TD\BookQuote\bin\Release\netcoreapp3.1\BookQuote.runtimeconfig.dev.json
+F:\TD\BookQuote\bin\Release\netcoreapp3.1\BookQuote.dll
+F:\TD\BookQuote\bin\Release\netcoreapp3.1\BookQuote.pdb
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.Quote.resources
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.csproj.GenerateResource.cache
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.AssemblyInfoInputs.cache
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.AssemblyInfo.cs
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.csproj.CoreCompileInputs.cache
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.dll
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.pdb
+F:\TD\BookQuote\obj\Release\netcoreapp3.1\BookQuote.genruntimeconfig.cache
