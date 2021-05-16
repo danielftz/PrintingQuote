@@ -57,6 +57,7 @@ namespace BookQuote
             this.sig8Label = new System.Windows.Forms.Label();
             this.sewingSetupFee = new System.Windows.Forms.TextBox();
             this.setupFeeLabel = new System.Windows.Forms.Label();
+            this.bookCountList = new System.Windows.Forms.ListBox();
             this.CaseInGroup = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.caseInCost = new System.Windows.Forms.TextBox();
@@ -93,6 +94,7 @@ namespace BookQuote
             this.label30 = new System.Windows.Forms.Label();
             this.totalCost = new System.Windows.Forms.Label();
             this.perBookCost = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             descriptionLabel = new System.Windows.Forms.Label();
             this.sewingGroup.SuspendLayout();
             this.CaseInGroup.SuspendLayout();
@@ -125,7 +127,7 @@ namespace BookQuote
             // 
             this.companyNameInput.Location = new System.Drawing.Point(150, 20);
             this.companyNameInput.Name = "companyNameInput";
-            this.companyNameInput.Size = new System.Drawing.Size(619, 23);
+            this.companyNameInput.Size = new System.Drawing.Size(552, 23);
             this.companyNameInput.TabIndex = 1;
             // 
             // timestampLabel
@@ -155,7 +157,7 @@ namespace BookQuote
             this.description.Multiline = true;
             this.description.Name = "description";
             this.description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.description.Size = new System.Drawing.Size(619, 70);
+            this.description.Size = new System.Drawing.Size(552, 70);
             this.description.TabIndex = 5;
             // 
             // bookCountLabel
@@ -171,9 +173,11 @@ namespace BookQuote
             // bookCount
             // 
             this.bookCount.Location = new System.Drawing.Point(150, 200);
+            this.bookCount.Margin = new System.Windows.Forms.Padding(0);
             this.bookCount.Name = "bookCount";
-            this.bookCount.Size = new System.Drawing.Size(100, 23);
+            this.bookCount.Size = new System.Drawing.Size(76, 23);
             this.bookCount.TabIndex = 7;
+            this.bookCount.Click += new System.EventHandler(this.bookCount_onClick);
             // 
             // sewingGroup
             // 
@@ -196,9 +200,9 @@ namespace BookQuote
             this.sewingGroup.Controls.Add(this.sig8Label);
             this.sewingGroup.Controls.Add(this.sewingSetupFee);
             this.sewingGroup.Controls.Add(this.setupFeeLabel);
-            this.sewingGroup.Location = new System.Drawing.Point(20, 240);
+            this.sewingGroup.Location = new System.Drawing.Point(20, 341);
             this.sewingGroup.Name = "sewingGroup";
-            this.sewingGroup.Size = new System.Drawing.Size(751, 163);
+            this.sewingGroup.Size = new System.Drawing.Size(404, 168);
             this.sewingGroup.TabIndex = 8;
             this.sewingGroup.TabStop = false;
             this.sewingGroup.Text = "Sewing";
@@ -380,6 +384,17 @@ namespace BookQuote
             this.setupFeeLabel.TabIndex = 0;
             this.setupFeeLabel.Text = "Setup Fee:";
             // 
+            // bookCountList
+            // 
+            this.bookCountList.FormattingEnabled = true;
+            this.bookCountList.ItemHeight = 15;
+            this.bookCountList.Location = new System.Drawing.Point(150, 222);
+            this.bookCountList.Name = "bookCountList";
+            this.bookCountList.ScrollAlwaysVisible = true;
+            this.bookCountList.Size = new System.Drawing.Size(120, 64);
+            this.bookCountList.TabIndex = 13;
+            this.bookCountList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.remove_bookCount);
+            // 
             // CaseInGroup
             // 
             this.CaseInGroup.Controls.Add(this.label14);
@@ -388,9 +403,9 @@ namespace BookQuote
             this.CaseInGroup.Controls.Add(this.label13);
             this.CaseInGroup.Controls.Add(this.caseInSetupFee);
             this.CaseInGroup.Controls.Add(this.label12);
-            this.CaseInGroup.Location = new System.Drawing.Point(20, 409);
+            this.CaseInGroup.Location = new System.Drawing.Point(430, 350);
             this.CaseInGroup.Name = "CaseInGroup";
-            this.CaseInGroup.Size = new System.Drawing.Size(751, 109);
+            this.CaseInGroup.Size = new System.Drawing.Size(272, 114);
             this.CaseInGroup.TabIndex = 9;
             this.CaseInGroup.TabStop = false;
             this.CaseInGroup.Text = "Case In";
@@ -459,9 +474,9 @@ namespace BookQuote
             this.perfectBindGroup.Controls.Add(this.label17);
             this.perfectBindGroup.Controls.Add(this.perfectBindSetupFee);
             this.perfectBindGroup.Controls.Add(this.label18);
-            this.perfectBindGroup.Location = new System.Drawing.Point(20, 524);
+            this.perfectBindGroup.Location = new System.Drawing.Point(20, 534);
             this.perfectBindGroup.Name = "perfectBindGroup";
-            this.perfectBindGroup.Size = new System.Drawing.Size(751, 109);
+            this.perfectBindGroup.Size = new System.Drawing.Size(282, 114);
             this.perfectBindGroup.TabIndex = 9;
             this.perfectBindGroup.TabStop = false;
             this.perfectBindGroup.Text = "Perfect Bind";
@@ -530,9 +545,9 @@ namespace BookQuote
             this.endSheetGlueGroup.Controls.Add(this.label21);
             this.endSheetGlueGroup.Controls.Add(this.endSheetGlueSetupFee);
             this.endSheetGlueGroup.Controls.Add(this.label22);
-            this.endSheetGlueGroup.Location = new System.Drawing.Point(18, 639);
+            this.endSheetGlueGroup.Location = new System.Drawing.Point(321, 534);
             this.endSheetGlueGroup.Name = "endSheetGlueGroup";
-            this.endSheetGlueGroup.Size = new System.Drawing.Size(751, 109);
+            this.endSheetGlueGroup.Size = new System.Drawing.Size(281, 114);
             this.endSheetGlueGroup.TabIndex = 10;
             this.endSheetGlueGroup.TabStop = false;
             this.endSheetGlueGroup.Text = "End Sheet Glue";
@@ -602,9 +617,9 @@ namespace BookQuote
             this.caseBindingGroup.Controls.Add(this.label24);
             this.caseBindingGroup.Controls.Add(this.label25);
             this.caseBindingGroup.Controls.Add(this.caseBindingSetupFee);
-            this.caseBindingGroup.Location = new System.Drawing.Point(18, 754);
+            this.caseBindingGroup.Location = new System.Drawing.Point(20, 664);
             this.caseBindingGroup.Name = "caseBindingGroup";
-            this.caseBindingGroup.Size = new System.Drawing.Size(751, 109);
+            this.caseBindingGroup.Size = new System.Drawing.Size(404, 114);
             this.caseBindingGroup.TabIndex = 10;
             this.caseBindingGroup.TabStop = false;
             this.caseBindingGroup.Text = "Case Binding";
@@ -678,7 +693,7 @@ namespace BookQuote
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26.Location = new System.Drawing.Point(148, 878);
+            this.label26.Location = new System.Drawing.Point(562, 727);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(17, 19);
             this.label26.TabIndex = 6;
@@ -688,7 +703,7 @@ namespace BookQuote
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(56, 878);
+            this.label28.Location = new System.Drawing.Point(470, 727);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(83, 19);
             this.label28.TabIndex = 0;
@@ -698,7 +713,7 @@ namespace BookQuote
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(27, 906);
+            this.label29.Location = new System.Drawing.Point(441, 755);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(112, 19);
             this.label29.TabIndex = 0;
@@ -706,9 +721,9 @@ namespace BookQuote
             // 
             // quoteButton
             // 
-            this.quoteButton.Location = new System.Drawing.Point(18, 941);
+            this.quoteButton.Location = new System.Drawing.Point(470, 675);
             this.quoteButton.Name = "quoteButton";
-            this.quoteButton.Size = new System.Drawing.Size(75, 23);
+            this.quoteButton.Size = new System.Drawing.Size(75, 28);
             this.quoteButton.TabIndex = 11;
             this.quoteButton.Text = "QUOTE";
             this.quoteButton.UseVisualStyleBackColor = true;
@@ -719,7 +734,7 @@ namespace BookQuote
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label30.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label30.Location = new System.Drawing.Point(148, 906);
+            this.label30.Location = new System.Drawing.Point(562, 755);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(17, 19);
             this.label30.TabIndex = 6;
@@ -730,7 +745,7 @@ namespace BookQuote
             this.totalCost.AutoSize = true;
             this.totalCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.totalCost.ForeColor = System.Drawing.Color.Gray;
-            this.totalCost.Location = new System.Drawing.Point(171, 878);
+            this.totalCost.Location = new System.Drawing.Point(585, 727);
             this.totalCost.Name = "totalCost";
             this.totalCost.Size = new System.Drawing.Size(129, 19);
             this.totalCost.TabIndex = 12;
@@ -741,18 +756,30 @@ namespace BookQuote
             this.perBookCost.AutoSize = true;
             this.perBookCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.perBookCost.ForeColor = System.Drawing.Color.Gray;
-            this.perBookCost.Location = new System.Drawing.Point(171, 906);
+            this.perBookCost.Location = new System.Drawing.Point(585, 755);
             this.perBookCost.Name = "perBookCost";
             this.perBookCost.Size = new System.Drawing.Size(129, 19);
             this.perBookCost.TabIndex = 12;
             this.perBookCost.Text = "To be generated...";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(226, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.add_bookCount_to_list);
             // 
             // Quote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(787, 990);
+            this.ClientSize = new System.Drawing.Size(731, 814);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bookCountList);
             this.Controls.Add(this.perBookCost);
             this.Controls.Add(this.totalCost);
             this.Controls.Add(this.quoteButton);
@@ -857,6 +884,8 @@ namespace BookQuote
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label totalCost;
         private System.Windows.Forms.Label perBookCost;
+        private System.Windows.Forms.ListBox bookCountList;
+        private System.Windows.Forms.Button button1;
     }
 }
 

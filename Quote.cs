@@ -60,5 +60,40 @@ namespace BookQuote
                 System.Windows.Forms.MessageBox.Show(err.Message,"Error");
             }
         }
+
+        private void add_bookCount_to_list (object sender, EventArgs e)
+        {
+            try
+            {
+                double BookCount = Convert.ToDouble(bookCount.Text);
+                bookCountList.Items.Add(BookCount.ToString());
+            }catch(Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(err.Message, "Error");
+            }
+        }
+
+        private void remove_bookCount (object sender, KeyEventArgs k)
+        {
+            try
+            {
+                if (bookCountList.SelectedItem != null && k.KeyCode==Keys.Delete)
+                {
+                    bookCountList.Items.Remove(bookCountList.SelectedItem);
+                }        
+            }
+            catch (Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(err.Message, "Error");
+            }
+        }
+
+        private void bookCount_onClick(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(bookCount.Text))
+            {
+                bookCount.SelectAll();
+            }
+        }
     }
 }

@@ -4,7 +4,6 @@ F:\TD\BookQuote\bin\Debug\netcoreapp3.1\BookQuote.runtimeconfig.json
 F:\TD\BookQuote\bin\Debug\netcoreapp3.1\BookQuote.runtimeconfig.dev.json
 F:\TD\BookQuote\bin\Debug\netcoreapp3.1\BookQuote.dll
 F:\TD\BookQuote\bin\Debug\netcoreapp3.1\BookQuote.pdb
-F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.csprojAssemblyReference.cache
 F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.Quote.resources
 F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.csproj.GenerateResource.cache
 F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.AssemblyInfoInputs.cache
