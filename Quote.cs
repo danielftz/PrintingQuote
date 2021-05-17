@@ -12,61 +12,87 @@ namespace BookQuote
 {
     public partial class Quote : Form
     {
+        private Company company = new Company();
         public Quote()
         {
             InitializeComponent();
         }
 
-        private void create_timestamp(object sender, EventArgs e)
-        {
-            String localTime = DateTime.Now.ToString("yyyyMMddHHmmss");
-            timestamp.Text = localTime;
-            timestamp.ForeColor = Color.Black;
-        }
 
         private void quoteButton_Click(object sender, EventArgs e)
         {
-            String localTime = DateTime.Now.ToString("yyyyMMddHHmmss");
-            timestamp.Text = localTime;
-            timestamp.ForeColor = Color.Black;
-
-            double TotalCost=0;
-            double SewingCost;
-            double CaseInCost;
-            double PerfectBindCost;
-            double EndSheetGlueCost;
-            double CaseBindingCost;
+            company.Name = companyNameInput.Text;
+            company.Description = description.Text;
             try
             {
-                double BookCount = Convert.ToDouble(bookCount.Text);
-                double SewingSetupFee = Convert.ToDouble(sewingSetupFee.Text);
-                double Sig8Cost = Convert.ToDouble(sig8Price.Text) * Convert.ToDouble(sig8Count.Text);
-                double Sig12Cost = Convert.ToDouble(sig12Price.Text) * Convert.ToDouble(sig12Count.Text);
-                double Sig16Cost = Convert.ToDouble(sig16Price.Text) * Convert.ToDouble(sig16Count.Text);
-                SewingCost = (Sig8Cost + Sig12Cost + Sig16Cost) * BookCount + SewingSetupFee;
-                CaseInCost = Convert.ToDouble(caseInSetupFee.Text) + BookCount * Convert.ToDouble(caseInCost.Text);
-                PerfectBindCost = Convert.ToDouble(perfectBindSetupFee.Text) + BookCount * Convert.ToDouble(perfectBindCost.Text);
-                EndSheetGlueCost = Convert.ToDouble(endSheetGlueSetupFee.Text) + BookCount * Convert.ToDouble(endSheetGlueCost.Text);
-                CaseBindingCost = Convert.ToDouble(caseBindingSetupFee.Text) + BookCount * Convert.ToDouble(caseBindingCost.Text) * Convert.ToDouble(caseBindingCount.Text);
-
-                TotalCost = SewingCost + CaseInCost + PerfectBindCost + EndSheetGlueCost + CaseBindingCost;
-                totalCost.Text = TotalCost.ToString();
-                perBookCost.Text = Math.Round(TotalCost / BookCount, 2).ToString();
+                foreach (string count in bookCountList.Items)
+                {
+                    SingleQuote quote = new SingleQuote();
+                    quote.bookCount = Convert.ToDouble(count);
+                    quote.sewingSetupFee = Convert.ToDouble(sewingSetupFee.Text);
+                    quote.sig4Cost = Convert.ToDouble(sig4Cost.Text);
+                    quote.sig4Count = Convert.ToDouble(sig4Count.Text);
+                    quote.sig8Cost = Convert.ToDouble(sig8Cost.Text);
+                    quote.sig8Count = Convert.ToDouble(sig8Count.Text);
+                    quote.sig12Cost = Convert.ToDouble(sig12Cost.Text);
+                    quote.sig12Count = Convert.ToDouble(sig12Count.Text);
+                    quote.sig16Cost = Convert.ToDouble(sig16Cost.Text);
+                    quote.sig16Count = Convert.ToDouble(sig16Count.Text);
+                    quote.caseInSetupFee = Convert.ToDouble(caseInSetupFee.Text);
+                    quote.caseInPerBookCost = Convert.ToDouble(caseInCost.Text);
+                    quote.caseBindingSetupFee = Convert.ToDouble(caseBindingSetupFee.Text);
+                    quote.caseBindingPerBookCost = Convert.ToDouble(caseBindingCost.Text);
+                    quote.endSheetSetupFee = Convert.ToDouble(endSheetGlueSetupFee.Text);
+                    quote.endSheetPerBookCost = Convert.ToDouble(endSheetGlueCost.Text);
+                    quote.perfectBindSetupFee = Convert.ToDouble(perfectBindSetupFee.Text);
+                    quote.perfectBindPerBookCost = Convert.ToDouble(perfectBindCost.Text);
+                    quote.calculate_Costs();
+                    company.addQuote(quote);
+                }
+                //databind table to the list of quotes
+                quoteTable.Visible = true;
+                quoteTable.AutoGenerateColumns = false;
+                quoteTable.DataSource = company.getQuotes();
 
 
             }
             catch (Exception err)
             {
-                System.Windows.Forms.MessageBox.Show(err.Message,"Error");
+                System.Windows.Forms.MessageBox.Show(err.Message, "Error");
             }
         }
 
-        private void add_bookCount_to_list (object sender, EventArgs e)
-        {
+
+        private void enter_bookCount_to_list(object sender, KeyEventArgs e)
+        {//this method add bookCount to list that will be calculated
             try
             {
-                double BookCount = Convert.ToDouble(bookCount.Text);
-                bookCountList.Items.Add(BookCount.ToString());
+                
+                if (bookCount.TextLength>0 && e.KeyCode == Keys.Enter)
+                {
+                    e.SuppressKeyPress = true; // remove dings
+                    //do this to verify the input was integer
+                    bookCountList.Items.Add(Convert.ToInt32(bookCount.Text).ToString());
+                    bookCount.ResetText();
+                }
+                
+            }
+            catch (Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(err.Message, "Error");
+            }
+        }
+        private void add_bookCount_to_list (object sender, EventArgs e)
+        {//this method add bookCount to list that will be calculated
+            try
+            {
+                if (bookCount.TextLength > 0)
+                {
+                    //do this to verify the input was integer
+                    bookCountList.Items.Add(Convert.ToInt32(bookCount.Text).ToString());
+                    bookCount.ResetText();
+                }
+                    
             }catch(Exception err)
             {
                 System.Windows.Forms.MessageBox.Show(err.Message, "Error");

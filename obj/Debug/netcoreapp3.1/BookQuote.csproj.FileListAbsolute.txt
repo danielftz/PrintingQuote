@@ -12,3 +12,4 @@ F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.csproj.CoreCompileInputs.cache
 F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.dll
 F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.pdb
 F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.genruntimeconfig.cache
+F:\TD\BookQuote\obj\Debug\netcoreapp3.1\BookQuote.csprojAssemblyReference.cache
