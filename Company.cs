@@ -6,12 +6,17 @@ namespace BookQuote
 {
     class Company
     {
+        private double companyID;
         private string name;
         private string description;
+        private List<QuoteJob> quoteJobs;
         private List<SingleQuote> quotes;
 
         public Company()
         {
+            Random rand = new Random();
+            this.companyID = Math.Floor(rand.NextDouble() * 1000000);
+
             //initialize quote list
             quotes = new List<SingleQuote>();
         }
@@ -21,6 +26,10 @@ namespace BookQuote
             set { name = value; }
         }
 
+        public void addQuoteJob(QuoteJob singleJob)
+        {//add to the job
+            quoteJobs.Add(singleJob);
+        }
         public string Description
         {//get and set company description
             get { return description; }

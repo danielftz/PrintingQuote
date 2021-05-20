@@ -16,6 +16,7 @@ namespace BookQuote
         public Quote()
         {
             InitializeComponent();
+            changePresetFeesMenuItem.Click += changePresetFeesMenuItem_Click;
         }
 
 
@@ -29,23 +30,15 @@ namespace BookQuote
                 {
                     SingleQuote quote = new SingleQuote();
                     quote.bookCount = Convert.ToDouble(count);
-                    quote.sewingSetupFee = Convert.ToDouble(sewingSetupFee.Text);
-                    quote.sig4Cost = Convert.ToDouble(sig4Cost.Text);
+                    
                     quote.sig4Count = Convert.ToDouble(sig4Count.Text);
-                    quote.sig8Cost = Convert.ToDouble(sig8Cost.Text);
+                    
                     quote.sig8Count = Convert.ToDouble(sig8Count.Text);
-                    quote.sig12Cost = Convert.ToDouble(sig12Cost.Text);
+                    
                     quote.sig12Count = Convert.ToDouble(sig12Count.Text);
-                    quote.sig16Cost = Convert.ToDouble(sig16Cost.Text);
+                    
                     quote.sig16Count = Convert.ToDouble(sig16Count.Text);
-                    quote.caseInSetupFee = Convert.ToDouble(caseInSetupFee.Text);
-                    quote.caseInPerBookCost = Convert.ToDouble(caseInCost.Text);
-                    quote.caseBindingSetupFee = Convert.ToDouble(caseBindingSetupFee.Text);
-                    quote.caseBindingPerBookCost = Convert.ToDouble(caseBindingCost.Text);
-                    quote.endSheetSetupFee = Convert.ToDouble(endSheetGlueSetupFee.Text);
-                    quote.endSheetPerBookCost = Convert.ToDouble(endSheetGlueCost.Text);
-                    quote.perfectBindSetupFee = Convert.ToDouble(perfectBindSetupFee.Text);
-                    quote.perfectBindPerBookCost = Convert.ToDouble(perfectBindCost.Text);
+                    
                     quote.calculate_Costs();
                     company.addQuote(quote);
                 }
@@ -62,7 +55,7 @@ namespace BookQuote
             }
         }
 
-
+        /*functions related */
         private void enter_bookCount_to_list(object sender, KeyEventArgs e)
         {//this method add bookCount to list that will be calculated
             try
@@ -120,6 +113,13 @@ namespace BookQuote
             {
                 bookCount.SelectAll();
             }
+        }
+
+        private void changePresetFeesMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin a = new Admin();
+            a.ShowDialog();
+
         }
     }
 }
