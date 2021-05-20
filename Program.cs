@@ -17,7 +17,7 @@ namespace BookQuote
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Quote());
+            Application.Run(new quoteForm());
         }
     }
 }

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace BookQuote
 {
-    public partial class Quote : Form
+    public partial class quoteForm : Form
     {
-        private Company company = new Company();
-        public Quote()
+        
+        public quoteForm()
         {
             InitializeComponent();
             changePresetFeesMenuItem.Click += changePresetFeesMenuItem_Click;
@@ -22,10 +22,16 @@ namespace BookQuote
 
         private void quoteButton_Click(object sender, EventArgs e)
         {
-            company.Name = companyNameInput.Text;
-            company.Description = description.Text;
             try
             {
+                Company company = new Company();
+                company.name = companyNameInput.Text;
+                //initialize job
+                Job job = new Job(company.companyID);
+                job.name = jobName.Text;
+                job.memo = memo.Text;
+                job.jobDate = jobDatePicker.Value;
+            
                 foreach (string count in bookCountList.Items)
                 {
                     SingleQuote quote = new SingleQuote();
@@ -40,12 +46,13 @@ namespace BookQuote
                     quote.sig16Count = Convert.ToDouble(sig16Count.Text);
                     
                     quote.calculate_Costs();
-                    company.addQuote(quote);
+                    job.addSingleQuote(quote);
                 }
+                company.addQuoteJob(job);
                 //databind table to the list of quotes
                 quoteTable.Visible = true;
                 quoteTable.AutoGenerateColumns = false;
-                quoteTable.DataSource = company.getQuotes();
+                quoteTable.DataSource = job.quotes;
 
 
             }
@@ -55,7 +62,7 @@ namespace BookQuote
             }
         }
 
-        /*functions related */
+        /*functions related to the book count list*/
         private void enter_bookCount_to_list(object sender, KeyEventArgs e)
         {//this method add bookCount to list that will be calculated
             try
@@ -117,8 +124,8 @@ namespace BookQuote
 
         private void changePresetFeesMenuItem_Click(object sender, EventArgs e)
         {
-            Admin a = new Admin();
-            a.ShowDialog();
+            adminForm a = new adminForm();
+            a.Show();
 
         }
     }

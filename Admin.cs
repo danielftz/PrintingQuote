@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace BookQuote
 {
-    public partial class Admin : Form
+    public partial class adminForm : Form
     {
-        public Admin()
+        public adminForm()
         {
             InitializeComponent();
         }

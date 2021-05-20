@@ -1,7 +1,7 @@
 ﻿
 namespace BookQuote
 {
-    partial class Admin
+    partial class adminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,8 @@ namespace BookQuote
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.home = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordOption = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePresetFees = new System.Windows.Forms.ToolStripMenuItem();
             this.caseBindingGroup = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.caseBindingCost = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -78,54 +74,13 @@ namespace BookQuote
             this.sig8Label = new System.Windows.Forms.Label();
             this.sewingSetupFee = new System.Windows.Forms.TextBox();
             this.setupFeeLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.saveSettingButton = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.caseBindingGroup.SuspendLayout();
             this.endSheetGlueGroup.SuspendLayout();
             this.perfectBindGroup.SuspendLayout();
             this.CaseInGroup.SuspendLayout();
             this.sewingGroup.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.home,
-            this.adminOptions});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // home
-            // 
-            this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(52, 20);
-            this.home.Text = "Home";
-            this.home.Visible = false;
-            // 
-            // adminOptions
-            // 
-            this.adminOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePasswordOption,
-            this.changePresetFees});
-            this.adminOptions.Name = "adminOptions";
-            this.adminOptions.Size = new System.Drawing.Size(55, 20);
-            this.adminOptions.Text = "Admin";
-            // 
-            // changePasswordOption
-            // 
-            this.changePasswordOption.Name = "changePasswordOption";
-            this.changePasswordOption.Size = new System.Drawing.Size(176, 22);
-            this.changePasswordOption.Text = "Change Password";
-            // 
-            // changePresetFees
-            // 
-            this.changePresetFees.Name = "changePresetFees";
-            this.changePresetFees.Size = new System.Drawing.Size(176, 22);
-            this.changePresetFees.Text = "Change Preset Fees";
             // 
             // caseBindingGroup
             // 
@@ -135,12 +90,23 @@ namespace BookQuote
             this.caseBindingGroup.Controls.Add(this.label24);
             this.caseBindingGroup.Controls.Add(this.label25);
             this.caseBindingGroup.Controls.Add(this.caseBindingSetupFee);
-            this.caseBindingGroup.Location = new System.Drawing.Point(12, 217);
+            this.caseBindingGroup.Location = new System.Drawing.Point(12, 202);
             this.caseBindingGroup.Name = "caseBindingGroup";
             this.caseBindingGroup.Size = new System.Drawing.Size(271, 114);
             this.caseBindingGroup.TabIndex = 21;
             this.caseBindingGroup.TabStop = false;
             this.caseBindingGroup.Text = "Case Binding";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(130, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 19);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "$";
             // 
             // label23
             // 
@@ -195,7 +161,7 @@ namespace BookQuote
             this.endSheetGlueGroup.Controls.Add(this.label21);
             this.endSheetGlueGroup.Controls.Add(this.endSheetGlueSetupFee);
             this.endSheetGlueGroup.Controls.Add(this.label22);
-            this.endSheetGlueGroup.Location = new System.Drawing.Point(289, 27);
+            this.endSheetGlueGroup.Location = new System.Drawing.Point(289, 12);
             this.endSheetGlueGroup.Name = "endSheetGlueGroup";
             this.endSheetGlueGroup.Size = new System.Drawing.Size(270, 114);
             this.endSheetGlueGroup.TabIndex = 22;
@@ -266,7 +232,7 @@ namespace BookQuote
             this.perfectBindGroup.Controls.Add(this.label17);
             this.perfectBindGroup.Controls.Add(this.perfectBindSetupFee);
             this.perfectBindGroup.Controls.Add(this.label18);
-            this.perfectBindGroup.Location = new System.Drawing.Point(289, 147);
+            this.perfectBindGroup.Location = new System.Drawing.Point(289, 132);
             this.perfectBindGroup.Name = "perfectBindGroup";
             this.perfectBindGroup.Size = new System.Drawing.Size(270, 114);
             this.perfectBindGroup.TabIndex = 19;
@@ -337,7 +303,7 @@ namespace BookQuote
             this.CaseInGroup.Controls.Add(this.label13);
             this.CaseInGroup.Controls.Add(this.caseInSetupFee);
             this.CaseInGroup.Controls.Add(this.label12);
-            this.CaseInGroup.Location = new System.Drawing.Point(289, 267);
+            this.CaseInGroup.Location = new System.Drawing.Point(289, 252);
             this.CaseInGroup.Name = "CaseInGroup";
             this.CaseInGroup.Size = new System.Drawing.Size(270, 114);
             this.CaseInGroup.TabIndex = 20;
@@ -418,7 +384,7 @@ namespace BookQuote
             this.sewingGroup.Controls.Add(this.sig8Label);
             this.sewingGroup.Controls.Add(this.sewingSetupFee);
             this.sewingGroup.Controls.Add(this.setupFeeLabel);
-            this.sewingGroup.Location = new System.Drawing.Point(12, 27);
+            this.sewingGroup.Location = new System.Drawing.Point(12, 12);
             this.sewingGroup.Name = "sewingGroup";
             this.sewingGroup.Size = new System.Drawing.Size(271, 184);
             this.sewingGroup.TabIndex = 23;
@@ -576,20 +542,9 @@ namespace BookQuote
             this.setupFeeLabel.TabIndex = 0;
             this.setupFeeLabel.Text = "Setup Fee:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(130, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 19);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "$";
-            // 
             // saveSettingButton
             // 
-            this.saveSettingButton.Location = new System.Drawing.Point(91, 351);
+            this.saveSettingButton.Location = new System.Drawing.Point(91, 336);
             this.saveSettingButton.Name = "saveSettingButton";
             this.saveSettingButton.Size = new System.Drawing.Size(99, 30);
             this.saveSettingButton.TabIndex = 24;
@@ -597,23 +552,20 @@ namespace BookQuote
             this.saveSettingButton.UseVisualStyleBackColor = true;
             this.saveSettingButton.Click += new System.EventHandler(this.saveSettingButton_Click);
             // 
-            // Admin
+            // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(582, 427);
+            this.ClientSize = new System.Drawing.Size(582, 402);
             this.Controls.Add(this.saveSettingButton);
             this.Controls.Add(this.sewingGroup);
             this.Controls.Add(this.caseBindingGroup);
             this.Controls.Add(this.endSheetGlueGroup);
             this.Controls.Add(this.perfectBindGroup);
             this.Controls.Add(this.CaseInGroup);
-            this.Controls.Add(this.menuStrip1);
-            this.Name = "Admin";
+            this.Name = "adminForm";
             this.Text = "Admin";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.caseBindingGroup.ResumeLayout(false);
             this.caseBindingGroup.PerformLayout();
             this.endSheetGlueGroup.ResumeLayout(false);
@@ -625,17 +577,10 @@ namespace BookQuote
             this.sewingGroup.ResumeLayout(false);
             this.sewingGroup.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem home;
-        private System.Windows.Forms.ToolStripMenuItem adminOptions;
-        private System.Windows.Forms.ToolStripMenuItem changePasswordOption;
-        private System.Windows.Forms.ToolStripMenuItem changePresetFees;
         private System.Windows.Forms.GroupBox caseBindingGroup;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox caseBindingCost;

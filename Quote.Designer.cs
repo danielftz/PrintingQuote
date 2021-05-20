@@ -1,7 +1,7 @@
 ﻿
 namespace BookQuote
 {
-    partial class Quote
+    partial class quoteForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -54,7 +54,7 @@ namespace BookQuote
             this.bookCount_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCost_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perBookCost_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.jobDatePicker = new System.Windows.Forms.DateTimePicker();
             this.existingCompanyLink = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.jobName = new System.Windows.Forms.TextBox();
@@ -105,7 +105,7 @@ namespace BookQuote
             // 
             this.companyNameInput.Location = new System.Drawing.Point(150, 41);
             this.companyNameInput.Name = "companyNameInput";
-            this.companyNameInput.Size = new System.Drawing.Size(382, 23);
+            this.companyNameInput.Size = new System.Drawing.Size(456, 23);
             this.companyNameInput.TabIndex = 1;
             // 
             // description
@@ -114,7 +114,7 @@ namespace BookQuote
             this.description.Multiline = true;
             this.description.Name = "description";
             this.description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.description.Size = new System.Drawing.Size(382, 58);
+            this.description.Size = new System.Drawing.Size(456, 58);
             this.description.TabIndex = 5;
             // 
             // bookCountLabel
@@ -269,7 +269,7 @@ namespace BookQuote
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(282, 285);
+            this.label27.Location = new System.Drawing.Point(356, 284);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(47, 19);
             this.label27.TabIndex = 6;
@@ -308,12 +308,12 @@ namespace BookQuote
             this.perBookCost_col.Name = "perBookCost_col";
             this.perBookCost_col.Width = 120;
             // 
-            // dateTimePicker1
+            // jobDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(332, 285);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 19;
+            this.jobDatePicker.Location = new System.Drawing.Point(406, 284);
+            this.jobDatePicker.Name = "jobDatePicker";
+            this.jobDatePicker.Size = new System.Drawing.Size(200, 23);
+            this.jobDatePicker.TabIndex = 19;
             // 
             // existingCompanyLink
             // 
@@ -339,7 +339,7 @@ namespace BookQuote
             // 
             this.jobName.Location = new System.Drawing.Point(150, 103);
             this.jobName.Name = "jobName";
-            this.jobName.Size = new System.Drawing.Size(382, 23);
+            this.jobName.Size = new System.Drawing.Size(456, 23);
             this.jobName.TabIndex = 21;
             // 
             // memo
@@ -348,7 +348,7 @@ namespace BookQuote
             this.memo.Multiline = true;
             this.memo.Name = "memo";
             this.memo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.memo.Size = new System.Drawing.Size(382, 58);
+            this.memo.Size = new System.Drawing.Size(456, 58);
             this.memo.TabIndex = 5;
             // 
             // home
@@ -391,7 +391,7 @@ namespace BookQuote
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // Quote
+            // quoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -400,7 +400,7 @@ namespace BookQuote
             this.ClientSize = new System.Drawing.Size(676, 674);
             this.Controls.Add(this.jobName);
             this.Controls.Add(this.existingCompanyLink);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.jobDatePicker);
             this.Controls.Add(this.quoteTable);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bookCountList);
@@ -417,7 +417,7 @@ namespace BookQuote
             this.Controls.Add(this.companyNameLabel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Quote";
+            this.Name = "quoteForm";
             this.Text = "Quote";
             this.userInputGroup.ResumeLayout(false);
             this.userInputGroup.PerformLayout();
@@ -453,7 +453,7 @@ namespace BookQuote
         private System.Windows.Forms.DataGridView quoteTable;
         private System.Windows.Forms.TextBox sig4Count;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker jobDatePicker;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookCount_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalCost_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn perBookCost_col;

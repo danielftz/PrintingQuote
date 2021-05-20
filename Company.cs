@@ -6,46 +6,25 @@ namespace BookQuote
 {
     class Company
     {
-        private double companyID;
-        private string name;
-        private string description;
-        private List<QuoteJob> quoteJobs;
-        private List<SingleQuote> quotes;
+        public double companyID { get; private set; }
+        public string name;
+        
+        public List<Job> jobs { get; private set; }
 
         public Company()
         {
+            //generate company ID
             Random rand = new Random();
             this.companyID = Math.Floor(rand.NextDouble() * 1000000);
-
-            //initialize quote list
-            quotes = new List<SingleQuote>();
-        }
-        public string Name
-        {//get and set company name
-            get { return name; }
-            set { name = value; }
+            //initialize a list of jobs
+            jobs = new List<Job>();
         }
 
-        public void addQuoteJob(QuoteJob singleJob)
+        public void addQuoteJob(Job singleJob)
         {//add to the job
-            quoteJobs.Add(singleJob);
-        }
-        public string Description
-        {//get and set company description
-            get { return description; }
-            set { description = value;}
+            jobs.Add(singleJob);
         }
 
-        public void addQuote (SingleQuote quote)
-        {//method that adds a quote under the company
-            quotes.Add(quote);
-        }
-
-        /*temporary method that retrieves entire list of quotes*/
-        public List<SingleQuote> getQuotes()
-        {
-            return quotes;
-        }
 
     }
 }

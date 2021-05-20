@@ -7,8 +7,8 @@ namespace BookQuote
     class SingleQuote
     {
         //most properties of SingleQuote public for now, will figure it out later
-        public double quoteID { get; set; }
-        public DateTime quoteDate { get; set; }
+        //public double quoteID { get; set; }
+        //public DateTime quoteDate { get; set; }
         public double bookCount { get; set; }
         
         public double sewingSetupFee { get; private set; }
@@ -50,12 +50,6 @@ namespace BookQuote
 
         public double totalCost { get; private set; }
         public double perBookCost { get; private set; }
-
-        public SingleQuote()
-        {
-            Random rand = new Random();
-            this.quoteID = Math.Floor(rand.NextDouble()*1000000);
-        }
 
         public void calculate_Costs()
         {
