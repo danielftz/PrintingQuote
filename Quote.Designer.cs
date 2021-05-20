@@ -43,6 +43,7 @@ namespace BookQuote
             this.sig8Count = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.exportButton = new System.Windows.Forms.Button();
             this.quoteButton = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -106,7 +107,7 @@ namespace BookQuote
             this.companyNameInput.Location = new System.Drawing.Point(150, 41);
             this.companyNameInput.Name = "companyNameInput";
             this.companyNameInput.Size = new System.Drawing.Size(456, 23);
-            this.companyNameInput.TabIndex = 1;
+            this.companyNameInput.TabIndex = 0;
             // 
             // description
             // 
@@ -115,7 +116,7 @@ namespace BookQuote
             this.description.Name = "description";
             this.description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.description.Size = new System.Drawing.Size(456, 58);
-            this.description.TabIndex = 5;
+            this.description.TabIndex = 2;
             // 
             // bookCountLabel
             // 
@@ -133,7 +134,7 @@ namespace BookQuote
             this.bookCount.Margin = new System.Windows.Forms.Padding(0);
             this.bookCount.Name = "bookCount";
             this.bookCount.Size = new System.Drawing.Size(76, 23);
-            this.bookCount.TabIndex = 7;
+            this.bookCount.TabIndex = 4;
             this.bookCount.Click += new System.EventHandler(this.bookCount_onClick);
             this.bookCount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_bookCount_to_list);
             // 
@@ -145,13 +146,14 @@ namespace BookQuote
             this.userInputGroup.Controls.Add(this.sig8Count);
             this.userInputGroup.Controls.Add(this.label3);
             this.userInputGroup.Controls.Add(this.label8);
+            this.userInputGroup.Controls.Add(this.exportButton);
             this.userInputGroup.Controls.Add(this.quoteButton);
             this.userInputGroup.Controls.Add(this.label26);
             this.userInputGroup.Controls.Add(this.label5);
             this.userInputGroup.Controls.Add(this.sig8Label);
             this.userInputGroup.Location = new System.Drawing.Point(19, 377);
             this.userInputGroup.Name = "userInputGroup";
-            this.userInputGroup.Size = new System.Drawing.Size(251, 190);
+            this.userInputGroup.Size = new System.Drawing.Size(251, 223);
             this.userInputGroup.TabIndex = 8;
             this.userInputGroup.TabStop = false;
             // 
@@ -160,21 +162,21 @@ namespace BookQuote
             this.sig16Count.Location = new System.Drawing.Point(136, 117);
             this.sig16Count.Name = "sig16Count";
             this.sig16Count.Size = new System.Drawing.Size(100, 23);
-            this.sig16Count.TabIndex = 7;
+            this.sig16Count.TabIndex = 9;
             // 
             // sig12Count
             // 
             this.sig12Count.Location = new System.Drawing.Point(136, 87);
             this.sig12Count.Name = "sig12Count";
             this.sig12Count.Size = new System.Drawing.Size(100, 23);
-            this.sig12Count.TabIndex = 7;
+            this.sig12Count.TabIndex = 8;
             // 
             // sig4Count
             // 
             this.sig4Count.Location = new System.Drawing.Point(136, 30);
             this.sig4Count.Name = "sig4Count";
             this.sig4Count.Size = new System.Drawing.Size(100, 23);
-            this.sig4Count.TabIndex = 7;
+            this.sig4Count.TabIndex = 6;
             // 
             // sig8Count
             // 
@@ -204,12 +206,22 @@ namespace BookQuote
             this.label8.TabIndex = 3;
             this.label8.Text = "16-pp Signature:";
             // 
+            // exportButton
+            // 
+            this.exportButton.Location = new System.Drawing.Point(136, 165);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(75, 28);
+            this.exportButton.TabIndex = 11;
+            this.exportButton.Text = "EXPORT";
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            // 
             // quoteButton
             // 
-            this.quoteButton.Location = new System.Drawing.Point(91, 146);
+            this.quoteButton.Location = new System.Drawing.Point(47, 165);
             this.quoteButton.Name = "quoteButton";
             this.quoteButton.Size = new System.Drawing.Size(75, 28);
-            this.quoteButton.TabIndex = 11;
+            this.quoteButton.TabIndex = 10;
             this.quoteButton.Text = "QUOTE";
             this.quoteButton.UseVisualStyleBackColor = true;
             this.quoteButton.Click += new System.EventHandler(this.quoteButton_Click);
@@ -260,7 +272,7 @@ namespace BookQuote
             this.button1.Location = new System.Drawing.Point(226, 284);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 23);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.add_bookCount_to_list);
@@ -340,7 +352,7 @@ namespace BookQuote
             this.jobName.Location = new System.Drawing.Point(150, 103);
             this.jobName.Name = "jobName";
             this.jobName.Size = new System.Drawing.Size(456, 23);
-            this.jobName.TabIndex = 21;
+            this.jobName.TabIndex = 1;
             // 
             // memo
             // 
@@ -349,7 +361,7 @@ namespace BookQuote
             this.memo.Name = "memo";
             this.memo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.memo.Size = new System.Drawing.Size(456, 58);
-            this.memo.TabIndex = 5;
+            this.memo.TabIndex = 3;
             // 
             // home
             // 
@@ -466,6 +478,7 @@ namespace BookQuote
         private System.Windows.Forms.ToolStripMenuItem changePasswordMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePresetFeesMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button exportButton;
     }
 }
 

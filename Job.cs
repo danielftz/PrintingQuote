@@ -25,6 +25,12 @@ namespace BookQuote
             quotes = new List<SingleQuote>();
         }
 
+        public SingleQuote createSingleQuote()
+        {
+            SingleQuote quote = new SingleQuote(estiamteID);
+            quotes.Add(quote);
+            return quote;
+        }
         public void addSingleQuote(SingleQuote quote)
         {
             quotes.Add(quote);

@@ -27,14 +27,15 @@ namespace BookQuote
                 Company company = new Company();
                 company.name = companyNameInput.Text;
                 //initialize job
-                Job job = new Job(company.companyID);
+                Job job = company.createNewJob();
+                job.description = description.Text;
                 job.name = jobName.Text;
                 job.memo = memo.Text;
                 job.jobDate = jobDatePicker.Value;
             
                 foreach (string count in bookCountList.Items)
                 {
-                    SingleQuote quote = new SingleQuote();
+                    SingleQuote quote = job.createSingleQuote();
                     quote.bookCount = Convert.ToDouble(count);
                     
                     quote.sig4Count = Convert.ToDouble(sig4Count.Text);
@@ -46,9 +47,9 @@ namespace BookQuote
                     quote.sig16Count = Convert.ToDouble(sig16Count.Text);
                     
                     quote.calculate_Costs();
-                    job.addSingleQuote(quote);
+                     
                 }
-                company.addQuoteJob(job);
+                
                 //databind table to the list of quotes
                 quoteTable.Visible = true;
                 quoteTable.AutoGenerateColumns = false;
@@ -126,6 +127,11 @@ namespace BookQuote
         {
             adminForm a = new adminForm();
             a.Show();
+
+        }
+        
+        private void exportButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

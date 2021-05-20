@@ -7,10 +7,8 @@ namespace BookQuote
     class SingleQuote
     {
         //most properties of SingleQuote public for now, will figure it out later
-        //public double quoteID { get; set; }
-        //public DateTime quoteDate { get; set; }
         public double bookCount { get; set; }
-        
+        public double parentEstimate { get; private set; }
         public double sewingSetupFee { get; private set; }
         public double sig4Cost { get; private set; }
         public double sig8Cost { get; private set; }
@@ -25,6 +23,10 @@ namespace BookQuote
         public double caseBindingSetupFee { get; private set; }
         public double caseBindingPerBookCost { get; private set; }
 
+        public SingleQuote(double estimateID)
+        {
+            parentEstimate = estimateID;
+        }
         private void UpdateAdminFees()
         {
             //these values defined in AdminFeeSettings
@@ -70,7 +72,7 @@ namespace BookQuote
                                 perfectBindPerBookCost+
                                 endSheetPerBookCost+
                                 caseBindingPerBookCost);
-            this.perBookCost = Math.Round(this.totalCost / this.bookCount);
+            this.perBookCost = Math.Round(this.totalCost / this.bookCount,2);
         }
     }
 }

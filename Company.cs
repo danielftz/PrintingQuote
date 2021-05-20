@@ -20,6 +20,15 @@ namespace BookQuote
             jobs = new List<Job>();
         }
 
+        //create new job and add to list
+        public Job createNewJob()
+        {
+            Job job = new Job(companyID);
+            jobs.Add(job);
+            return job;
+        }
+
+        //keep aside for now
         public void addQuoteJob(Job singleJob)
         {//add to the job
             jobs.Add(singleJob);
