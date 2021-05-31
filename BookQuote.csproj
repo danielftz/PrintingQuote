@@ -6,4 +6,21 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="WestcoastDB.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="WestcoastDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.114.2" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.1" />
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.114" />
+  </ItemGroup>
+
 </Project>
